@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 //presentation
 import 'package:flutter_project/presentation/serie_page.dart';
 import 'package:flutter_project/presentation/film_page.dart';
+import 'package:flutter_project/presentation/search_page.dart';
+import 'package:flutter_project/presentation/user_page.dart';
 
 void main() {
   runApp(const MovieApp());
@@ -34,6 +36,8 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = const [
     SeriePage(),
     FilmPage(),
+    SearchPage(),
+    UserPage(),
   ];
 
   @override
@@ -58,6 +62,14 @@ class _RootPageState extends State<RootPage> {
           BottomNavigationBarItem(
             label: 'Film',
             icon: Icon(Icons.movie),
+          ),
+          BottomNavigationBarItem(
+            label: 'Cerca',
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            label: 'User',
+            icon: Icon(Icons.person),
           ),
         ],
       ),
