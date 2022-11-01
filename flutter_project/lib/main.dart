@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/navigation/movie_root.dart';
 
 //presentation
 import 'package:flutter_project/presentation/serie_page.dart';
-import 'package:flutter_project/presentation/film_page.dart';
+
 import 'package:flutter_project/presentation/search_page.dart';
 import 'package:flutter_project/presentation/user_page.dart';
 
@@ -35,7 +36,7 @@ class _RootPageState extends State<RootPage> {
 
   List<Widget> pages = const [
     SeriePage(),
-    FilmPage(),
+    MovieRoot(),
     SearchPage(),
     UserPage(),
   ];

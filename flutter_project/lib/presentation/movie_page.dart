@@ -9,14 +9,14 @@ import 'package:flutter_project/widgets/movie_item.dart';
 //entity
 import 'package:flutter_project/models/movie.dart';
 
-class FilmPage extends StatefulWidget {
-  const FilmPage({super.key});
+class MoviePage extends StatefulWidget {
+  const MoviePage({super.key});
 
   @override
-  State<FilmPage> createState() => _FilmPageState();
+  State<MoviePage> createState() => _MoviePageState();
 }
 
-class _FilmPageState extends State<FilmPage> {
+class _MoviePageState extends State<MoviePage> {
   List<Movie> _movies = [];
   int _page = 1;
 
