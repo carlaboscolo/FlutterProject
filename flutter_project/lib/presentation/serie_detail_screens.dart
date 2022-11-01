@@ -13,7 +13,6 @@ class SerieDetailScreen extends StatelessWidget {
   var _status;
   var _imageUrl;
   var _rating;
-  var _genres;
   var _htmlDescription;
 
   Future _fetchDetail(String id) async {
