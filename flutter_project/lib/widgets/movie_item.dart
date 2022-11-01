@@ -68,7 +68,7 @@ class MovieItem extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 15),
                         alignment: Alignment.topLeft,
                         child: Text(
-                          releaseDate,
+                          'Data di uscita : ' + releaseDate,
                           style: const TextStyle(fontSize: 16),
                         ),
                       ),
@@ -76,7 +76,7 @@ class MovieItem extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 15, bottom: 10),
                         alignment: Alignment.topLeft,
                         child: Text(
-                          vote.toString(),
+                          'Voto : ' + vote.toString(),
                           style: const TextStyle(fontSize: 14),
                         ),
                       ),

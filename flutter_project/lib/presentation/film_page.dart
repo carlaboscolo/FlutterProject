@@ -47,7 +47,7 @@ class _FilmPageState extends State<FilmPage> {
       _movies.addAll(myMovies);
     });
     _page += 1;
-    print(_movies[1].title);
+    //print(_movies[1].title);
   }
 
   @override
