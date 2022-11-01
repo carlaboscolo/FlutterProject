@@ -24,7 +24,6 @@ class MovieDetailScreen extends StatelessWidget {
 
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
-      //final list = result[" "];
       _htmlDescription = result["overview"];
       final document = parse(_htmlDescription);
       _description = parse(document.body!.text).documentElement!.text;
@@ -34,7 +33,6 @@ class MovieDetailScreen extends StatelessWidget {
       _status = result["status"];
       _imageUrl = result["poster_path"];
       _rating = result["vote_average"];
-      _genres = result["genres"];
     }
   }
 
@@ -101,7 +99,7 @@ class MovieDetailScreen extends StatelessWidget {
                       const SizedBox(height: 20),
                       const SizedBox(height: 20),
                       const Text(
-                        'Release Data : ',
+                        'Data di uscita : ',
                         style: TextStyle(fontSize: 18, color: Colors.blue),
                       ),
                       const SizedBox(height: 10),
