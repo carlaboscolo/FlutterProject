@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/presentation/components/card.dart';
 import 'package:flutter_project/presentation/style/colors.dart';
 
 class FilmPage extends StatefulWidget {
@@ -16,6 +17,7 @@ class _FilmPageState extends State<FilmPage> {
         title: Text('Film'),
         backgroundColor: backgroundTopColor,
       ),
+      body: CardComponent(),
     );
   }
 }
