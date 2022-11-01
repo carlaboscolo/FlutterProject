@@ -64,23 +64,3 @@ class _RootPageState extends State<RootPage> {
     );
   }
 }
-      
-      
-      
-      /* body: pages[currentPage],
-      bottomNavigationBar: NavigationBar(
-        height: 60,
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.tv), label: 'Serie'),
-          NavigationDestination(icon: Icon(Icons.movie), label: 'Film'),
-        ],
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPage = index;
-          });
-        },
-        selectedIndex: currentPage,
-      ), */
-
-
-    
