@@ -54,7 +54,7 @@ class _RootPageState extends State<RootPage> {
             currentPage = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             label: 'Serie',
             icon: Icon(Icons.tv),
