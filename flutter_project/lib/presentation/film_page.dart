@@ -3,8 +3,8 @@ import 'package:flutter_project/presentation/style/colors.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-//component
-import 'package:flutter_project/presentation/components/card.dart';
+//widget
+import 'package:flutter_project/widgets/movie_item.dart';
 
 //entity
 import 'package:flutter_project/models/movie.dart';
@@ -23,7 +23,7 @@ class _FilmPageState extends State<FilmPage> {
   @override
   void initState() {
     super.initState();
-    populateMovies(_page);
+    popularMovies(_page);
   }
 
   Future<List<Movie>> _fetchMovies(int page) async {
@@ -41,13 +41,12 @@ class _FilmPageState extends State<FilmPage> {
     }
   }
 
-  void populateMovies(int page) async {
+  void popularMovies(int page) async {
     final myMovies = await _fetchMovies(page);
     setState(() {
       _movies.addAll(myMovies);
     });
     _page += 1;
-    // print("populating " + page.toString());
     print(_movies[1].title);
   }
 
@@ -58,7 +57,20 @@ class _FilmPageState extends State<FilmPage> {
         title: Text('Film'),
         backgroundColor: backgroundTopColor,
       ),
-      body: CardComponent(),
+      body: _movies.isEmpty
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: _movies.length,
+              itemBuilder: (context, index) => MovieItem(
+                  _movies[index].id,
+                  _movies[index].image,
+                  _movies[index].title,
+                  _movies[index].releaseDate,
+                  _movies[index].vote),
+              padding: const EdgeInsets.all(10),
+            ),
     );
   }
 }

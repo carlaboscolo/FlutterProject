@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/presentation/components/card.dart';
 import 'package:flutter_project/presentation/style/colors.dart';
 
 class SeriePage extends StatefulWidget {
@@ -13,10 +12,11 @@ class _SeriePageState extends State<SeriePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Serie'),
-          backgroundColor: backgroundTopColor,
-        ),
-        body: CardComponent());
+      appBar: AppBar(
+        title: Text('Serie'),
+        backgroundColor: backgroundTopColor,
+      ),
+      // body:
+    );
   }
 }
