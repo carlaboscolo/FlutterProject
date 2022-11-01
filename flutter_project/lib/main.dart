@@ -43,7 +43,7 @@ class _RootPageState extends State<RootPage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentPage,
-        selectedItemColor: Color.fromRGBO(163, 30, 252, 1),
+        selectedItemColor: Color(0xFFCA82FA),
         unselectedItemColor: Color.fromARGB(255, 206, 206, 206),
         onTap: (int index) {
           setState(() {
