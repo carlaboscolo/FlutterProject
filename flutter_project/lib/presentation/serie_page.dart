@@ -50,11 +50,13 @@ class _SeriePageState extends State<SeriePage> {
           : ListView.builder(
               itemCount: _serie.length,
               itemBuilder: (context, index) => SerieItem(
-                  _serie[index].id,
-                  _serie[index].image,
-                  _serie[index].title,
-                  _serie[index].releaseDate,
-                  _serie[index].vote),
+                _serie[index].id,
+                _serie[index].image,
+                _serie[index].title,
+                _serie[index].releaseDate,
+                _serie[index].vote,
+                _serie[index].description,
+              ),
               padding: const EdgeInsets.all(10),
             ),
     );

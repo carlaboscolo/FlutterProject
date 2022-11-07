@@ -50,11 +50,13 @@ class _MoviePageState extends State<MoviePage> {
           : ListView.builder(
               itemCount: _movies.length,
               itemBuilder: (context, index) => MovieItem(
-                  _movies[index].id,
-                  _movies[index].image,
-                  _movies[index].title,
-                  _movies[index].releaseDate,
-                  _movies[index].vote),
+                _movies[index].id,
+                _movies[index].image,
+                _movies[index].title,
+                _movies[index].releaseDate,
+                _movies[index].vote,
+                _movies[index].description,
+              ),
               padding: const EdgeInsets.all(10),
             ),
     );
