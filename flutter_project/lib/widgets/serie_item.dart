@@ -25,7 +25,7 @@ class SerieItem extends StatelessWidget {
         children: [
           Container(
             // height: 500,
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(2),
             child: InkWell(
               child: Card(
                 elevation: 10,
