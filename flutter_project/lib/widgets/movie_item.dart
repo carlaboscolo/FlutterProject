@@ -9,6 +9,7 @@ class MovieItem extends StatelessWidget {
   final String title;
   final String releaseDate;
   final num vote;
+  final String description;
 
   MovieItem(
     this.id,
@@ -16,6 +17,7 @@ class MovieItem extends StatelessWidget {
     this.title,
     this.releaseDate,
     this.vote,
+    this.description,
   );
 
   @override
@@ -56,26 +58,41 @@ class MovieItem extends StatelessWidget {
                       height: 5,
                     ),
                     Container(
-                      padding: const EdgeInsets.all(10),
-                      alignment: Alignment.topLeft,
-                      child: Text(title,
-                          style: const TextStyle(
-                              fontSize: 28, fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(left: 15),
-                      alignment: Alignment.topLeft,
+                      padding: const EdgeInsets.only(top: 5, bottom: 2),
+                      alignment: Alignment.center,
                       child: Text(
-                        'Data di uscita : ' + releaseDate,
-                        style: const TextStyle(fontSize: 16),
+                        'Uscita : ' +
+                            releaseDate +
+                            '    |    Voto : ' +
+                            vote.toString(),
+                        style: const TextStyle(fontSize: 13),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.only(left: 15, bottom: 10),
+                      padding: const EdgeInsets.all(10),
+                      alignment: Alignment.center,
+                      child: Text(title,
+                          style: const TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFFCA82FA))),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(left: 25, right: 15),
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Voto : ' + vote.toString(),
-                        style: const TextStyle(fontSize: 14),
+                        description,
+                        style: const TextStyle(fontSize: 15),
+                        maxLines: 2,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(
+                          left: 25, right: 15, bottom: 20),
+                      alignment: Alignment.topLeft,
+                      child: const Text(
+                        "...",
+                        style: TextStyle(fontSize: 15),
                       ),
                     ),
                   ],

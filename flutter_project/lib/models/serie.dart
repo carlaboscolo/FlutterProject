@@ -4,13 +4,16 @@ class Serie {
   final String title;
   final String releaseDate;
   final num vote;
+  final String description;
 
-  Serie(
-      {required this.id,
-      required this.image,
-      required this.title,
-      required this.releaseDate,
-      required this.vote});
+  Serie({
+    required this.id,
+    required this.image,
+    required this.title,
+    required this.releaseDate,
+    required this.vote,
+    required this.description,
+  });
 
   factory Serie.fromJson(Map<String, dynamic> json) {
     return Serie(
@@ -19,6 +22,7 @@ class Serie {
       title: json['original_name'],
       releaseDate: json['first_air_date'],
       vote: json['vote_average'],
+      description: json["overview"],
     );
   }
 }

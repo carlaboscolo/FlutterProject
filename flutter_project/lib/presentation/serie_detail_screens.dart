@@ -14,12 +14,13 @@ class SerieDetailScreen extends StatelessWidget {
   var _imageUrl;
   var _rating;
   var _htmlDescription;
+  var _genres;
 
   Future _fetchDetail(String id) async {
     const apiKey = "a7c4848fcfb89f8bef0757f282d0a463";
 
     final response = await http.get(Uri.parse(
-        'https://api.themoviedb.org/3/tv/$id?api_key=$apiKey&language=en-US'));
+        'https://api.themoviedb.org/3/tv/$id?api_key=$apiKey&language=it'));
 
     if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
@@ -32,6 +33,7 @@ class SerieDetailScreen extends StatelessWidget {
       _status = result["status"];
       _imageUrl = result["poster_path"];
       _rating = result["vote_average"];
+      _genres = result["genres"];
     }
   }
 
@@ -96,7 +98,6 @@ class SerieDetailScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const SizedBox(height: 20),
                         const Text(
                           'Data di uscita : ',
                           style: TextStyle(fontSize: 18, color: Colors.blue),
@@ -104,9 +105,28 @@ class SerieDetailScreen extends StatelessWidget {
                         const SizedBox(height: 10),
                         Text(_start.toString()),
                         const SizedBox(height: 10),
+                        const Text(
+                          'Stato : ',
+                          style: TextStyle(fontSize: 18, color: Colors.blue),
+                        ),
+                        const SizedBox(height: 10),
                         Text(_status.toString()),
                         const SizedBox(height: 10),
+                        const Text(
+                          'Genere : ',
+                          style: TextStyle(fontSize: 18, color: Colors.blue),
+                        ),
+                        const SizedBox(height: 10),
+                        for (var i in _genres)
+                          Column(
+                            children: [
+                              Text(i["name"].toString()),
+                            ],
+                          ),
                       ],
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                   ],
                 ),
@@ -118,7 +138,6 @@ class SerieDetailScreen extends StatelessWidget {
                       fontSize: 18,
                       height: 1.5,
                       wordSpacing: 1.5,
-                      fontStyle: FontStyle.italic,
                     ),
                   ),
                 ),
