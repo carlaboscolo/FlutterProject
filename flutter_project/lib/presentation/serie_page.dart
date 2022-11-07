@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/presentation/style/colors.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 //widget
 import 'package:flutter_project/widgets/serie_item.dart';
 
 //entity
 import 'package:flutter_project/models/serie.dart';
+
+//api
+import 'package:flutter_project/api/api_serie.dart';
 
 class SeriePage extends StatefulWidget {
   const SeriePage({super.key});
@@ -26,23 +27,8 @@ class _SeriePageState extends State<SeriePage> {
     popularSerie(_page);
   }
 
-  Future<List<Serie>> _fetchSerie(int page) async {
-    const apiKey = "a7c4848fcfb89f8bef0757f282d0a463";
-
-    final response = await http.get(Uri.parse(
-        'https://api.themoviedb.org/3/tv/popular?api_key=$apiKey&language=en-US&page=$page'));
-
-    if (response.statusCode == 200) {
-      final result = jsonDecode(response.body);
-      Iterable list = result['results'];
-      return list.map((e) => Serie.fromJson(e)).toList();
-    } else {
-      throw Exception('failed');
-    }
-  }
-
   void popularSerie(int page) async {
-    final myMovies = await _fetchSerie(page);
+    final myMovies = await ApiSerie().fetchSerie(page);
     setState(() {
       _serie.addAll(myMovies);
     });
