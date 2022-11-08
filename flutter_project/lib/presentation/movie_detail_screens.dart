@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_project/data/models/movie.dart';
 import 'package:html/parser.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -34,6 +35,8 @@ class MovieDetailScreen extends StatelessWidget {
       _imageUrl = result["poster_path"];
       _rating = result["vote_average"];
       _genres = result["genres"];
+    } else {
+      throw Exception('failed');
     }
   }
 
