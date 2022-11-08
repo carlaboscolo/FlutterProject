@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 //models
-import 'package:flutter_project/models/movie.dart';
+import 'package:flutter_project/data/models/movie.dart';
 
 const API_KEY = "a7c4848fcfb89f8bef0757f282d0a463";
 

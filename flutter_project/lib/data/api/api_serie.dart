@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 //models
-import 'package:flutter_project/models/serie.dart';
+import 'package:flutter_project/data/models/serie.dart';
 
 const API_KEY = "a7c4848fcfb89f8bef0757f282d0a463";
 

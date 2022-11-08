@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/presentation/style/colors.dart';
 
 //widget
-import 'package:flutter_project/widgets/serie_item.dart';
+import 'package:flutter_project/presentation/widgets/serie_item.dart';
 
 //entity
-import 'package:flutter_project/models/serie.dart';
+import 'package:flutter_project/data/models/serie.dart';
 
 //api
-import 'package:flutter_project/api/api_serie.dart';
+import 'package:flutter_project/data/api/api_serie.dart';
 
 class SeriePage extends StatefulWidget {
   const SeriePage({super.key});

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/presentation/style/colors.dart';
 
 //widget
-import 'package:flutter_project/widgets/movie_item.dart';
+import 'package:flutter_project/presentation/widgets/movie_item.dart';
 
 //entity
-import 'package:flutter_project/models/movie.dart';
+import 'package:flutter_project/data/models/movie.dart';
 
 //api
-import 'package:flutter_project/api/api_movie.dart';
+import 'package:flutter_project/data/api/api_movie.dart';
 
 class MoviePage extends StatefulWidget {
   const MoviePage({super.key});
