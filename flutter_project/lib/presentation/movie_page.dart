@@ -12,6 +12,7 @@ import 'package:flutter_project/data/api/api_movie.dart';
 
 class MoviePage extends StatefulWidget {
   const MoviePage({super.key});
+  static const routeName = 'movie_page';
 
   @override
   State<MoviePage> createState() => _MoviePageState();

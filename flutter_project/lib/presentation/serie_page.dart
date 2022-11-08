@@ -12,6 +12,7 @@ import 'package:flutter_project/data/api/api_serie.dart';
 
 class SeriePage extends StatefulWidget {
   const SeriePage({super.key});
+  static const routeName = 'serie_page';
 
   @override
   State<SeriePage> createState() => _SeriePageState();

@@ -14,14 +14,16 @@ class MovieRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MoviePage(),
+      // home: const MoviePage(),
       debugShowCheckedModeBanner:
           false, //toglie la scritta debug in alto a destra
       //theme imposta il colore dell'app
       theme: ThemeData(brightness: Brightness.dark),
       routes: {
+        MoviePage.routeName: (context) => MoviePage(),
         MovieDetailScreen.routeName: (context) => MovieDetailScreen(),
       },
+      initialRoute: MoviePage.routeName,
     );
   }
 }

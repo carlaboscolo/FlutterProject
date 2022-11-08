@@ -16,14 +16,16 @@ class SerieRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const SeriePage(),
+      //home: const SeriePage(),
       debugShowCheckedModeBanner:
           false, //toglie la scritta debug in alto a destra
       //theme imposta il colore dell'app
       theme: ThemeData(brightness: Brightness.dark),
       routes: {
+        SeriePage.routeName: (context) => SeriePage(),
         SerieDetailScreen.routeName: (context) => SerieDetailScreen(),
       },
+      initialRoute: SeriePage.routeName,
     );
   }
 }
