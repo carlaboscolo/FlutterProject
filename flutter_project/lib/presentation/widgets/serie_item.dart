@@ -39,7 +39,7 @@ class SerieItem extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      height: 380,
+                      height: 480,
                       width: 400,
                       child: ClipRRect(
                         borderRadius: const BorderRadius.only(
