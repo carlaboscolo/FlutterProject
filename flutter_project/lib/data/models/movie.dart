@@ -5,14 +5,19 @@ class Movie {
   final String releaseDate;
   final num vote;
   final String description;
+  final String? status;
+  final String? genres;
 
-  Movie(
-      {required this.id,
-      required this.image,
-      required this.title,
-      required this.releaseDate,
-      required this.vote,
-      required this.description});
+  Movie({
+    required this.id,
+    required this.image,
+    required this.title,
+    required this.releaseDate,
+    required this.vote,
+    required this.description,
+    this.status,
+    this.genres,
+  });
 
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
@@ -21,7 +26,9 @@ class Movie {
       title: json['original_title'],
       releaseDate: json['release_date'],
       vote: json['vote_average'],
-      description: json["overview"],
+      description: json['overview'],
+      status: json['status'],
+      genres: json['genres'],
     );
   }
 }

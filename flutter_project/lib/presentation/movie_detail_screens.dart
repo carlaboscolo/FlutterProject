@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_project/data/models/movie.dart';
 import 'package:html/parser.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -34,6 +35,8 @@ class MovieDetailScreen extends StatelessWidget {
       _imageUrl = result["poster_path"];
       _rating = result["vote_average"];
       _genres = result["genres"];
+    } else {
+      throw Exception('failed');
     }
   }
 
@@ -65,23 +68,27 @@ class MovieDetailScreen extends StatelessWidget {
                       top: 10,
                     ),
                     width: 200,
-                    child: Image.network(
-                        "https://image.tmdb.org/t/p/w500/$_imageUrl",
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        color: Colors.white,
-                        child: LayoutBuilder(
-                          builder: (context, constraint) {
-                            return Icon(
-                              Icons.error_outline_sharp,
-                              color: Colors.red,
-                              size: constraint.biggest.width,
-                            );
-                          },
-                        ),
-                      );
-                    }),
+                    child: Hero(
+                      tag:
+                          'location-img-${"https://image.tmdb.org/t/p/w500/$_imageUrl"}',
+                      child: Image.network(
+                          "https://image.tmdb.org/t/p/w500/$_imageUrl",
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.white,
+                          child: LayoutBuilder(
+                            builder: (context, constraint) {
+                              return Icon(
+                                Icons.error_outline_sharp,
+                                color: Colors.red,
+                                size: constraint.biggest.width,
+                              );
+                            },
+                          ),
+                        );
+                      }),
+                    ),
                   ),
                   const SizedBox(width: 40),
                   Column(
