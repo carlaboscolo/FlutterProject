@@ -48,8 +48,12 @@ class SerieItem extends StatelessWidget {
                         ),
                         child: FittedBox(
                           fit: BoxFit.cover,
-                          child: Image.network(
-                            "https://image.tmdb.org/t/p/w500/$imageUrl",
+                          child: Hero(
+                            tag:
+                                'location-img-${"https://image.tmdb.org/t/p/w500/$imageUrl"}',
+                            child: Image.network(
+                              "https://image.tmdb.org/t/p/w500/$imageUrl",
+                            ),
                           ),
                         ),
                       ),

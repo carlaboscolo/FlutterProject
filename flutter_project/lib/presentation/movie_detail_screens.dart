@@ -68,23 +68,27 @@ class MovieDetailScreen extends StatelessWidget {
                       top: 10,
                     ),
                     width: 200,
-                    child: Image.network(
-                        "https://image.tmdb.org/t/p/w500/$_imageUrl",
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        color: Colors.white,
-                        child: LayoutBuilder(
-                          builder: (context, constraint) {
-                            return Icon(
-                              Icons.error_outline_sharp,
-                              color: Colors.red,
-                              size: constraint.biggest.width,
-                            );
-                          },
-                        ),
-                      );
-                    }),
+                    child: Hero(
+                      tag:
+                          'location-img-${"https://image.tmdb.org/t/p/w500/$_imageUrl"}',
+                      child: Image.network(
+                          "https://image.tmdb.org/t/p/w500/$_imageUrl",
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.white,
+                          child: LayoutBuilder(
+                            builder: (context, constraint) {
+                              return Icon(
+                                Icons.error_outline_sharp,
+                                color: Colors.red,
+                                size: constraint.biggest.width,
+                              );
+                            },
+                          ),
+                        );
+                      }),
+                    ),
                   ),
                   const SizedBox(width: 40),
                   Column(
